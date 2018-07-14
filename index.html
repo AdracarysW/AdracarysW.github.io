@@ -1,103 +1,110 @@
-<!-- <!doctype html>
-
-<html>
-  <head>
-    <title>Amar Waraich</title>
-
-    <link rel="stylesheet" href='main.css'>
-  </head>
-  <body>
-    <h1>Hi. My name is Amar Waraich.</h1>
-    <p>Thank you for visiting my site!</p>
-    <p><b></b>Work in progress...</p> 
-    <h2>This is a test of heading two</h2>
-  </body>
-</html> -->
 <!DOCTYPE html>
 <html>
-  <head>
-    
-    <link rel="stylesheet" href='main.css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <style>
-    .dropbtn {
-        background-color: #3498DB;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    .dropbtn:hover, .dropbtn:focus {
-        background-color: #2980B9;
-    }
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        right: 0;
-        z-index: 1;
-    }
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: red;
+}
 
-    .dropdown a:hover {background-color: #ddd;}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
-    .show {display: block;}
-    </style>
-  </head>
-  <body>
-    <title>Amar Waraich</title>
-    <h1>Hi, my name is Amar Waraich</h1>
-    <p>Click on the button to open the dropdown menu.</p>
-    <p>This is a work in progress</p>
-    <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Dropdown
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
     </div>
+  </div> 
+</div>
 
-    <script>
-  /* When the user clicks on the button, 
-  toggle between hiding and showing the dropdown content */
-  function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  }
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Click on the "Dropdown" link to see the dropdown menu.</p>
 
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
       }
-    }
   }
-  </script>
-
-  </body>
+}
+</script>
+</body>
 </html>
+
+
